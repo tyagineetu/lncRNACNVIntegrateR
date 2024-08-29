@@ -21,8 +21,8 @@
 preprocessing_and_preparation <- function(expr_df, cnv_df, clin_df) {
 
 # Check and create the directory inside your function
-output_dir <- file.path(getwd(), "lncRNACNVIntegrateR_output")
-if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
+#output_dir <- file.path(getwd(), "lncRNACNVIntegrateR_output")
+#if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 
   # Read expression data from file
   expression_data <- as.data.frame(expr_df)
