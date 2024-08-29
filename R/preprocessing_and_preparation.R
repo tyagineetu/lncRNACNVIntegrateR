@@ -29,6 +29,8 @@ preprocessing_and_preparation <- function(expr_df, cnv_df, clin_df) {
   # Create the main output directory
   dir.create(main_output_directory, recursive = TRUE)
 
+  setwd("main_output_directory")
+
   # Read expression data from file
   expression_data <- as.data.frame(expr_df)
   head(expression_data[1:10,1:10])
