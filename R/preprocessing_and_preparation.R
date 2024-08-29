@@ -81,8 +81,7 @@ preprocessing_and_preparation <- function(expr_df, cnv_df, clin_df) {
 
   head(clin_selected)
 
-  ### now select the expression and CNV data for final common samples i.e., 483 ###
-
+  ### now select the expression and CNV data for final common samples ###
   df_gene_expr_data.t <- expression_data[raw_names_clin_data_avail, ]
 
   # Extract common samples from CNV data
