@@ -20,16 +20,9 @@
 #' preprocessing_and_preparation_result <- preprocessing_and_preparation(expr_df, cnv_df, clin_df)
 preprocessing_and_preparation <- function(expr_df, cnv_df, clin_df) {
 
-  # Get the user's home directory and then the Desktop directory
-  desktop_directory <- file.path(path.expand("~"), "Desktop")
-
-  # Set the main output directory to the Desktop
-  main_output_directory <- file.path(desktop_directory, "lncRNACNVIntegrateR_output")
-
-  # Create the main output directory
-  dir.create(main_output_directory, recursive = TRUE)
-
-  setwd("main_output_directory")
+# Check and create the directory inside your function
+output_dir <- file.path(getwd(), "lncRNACNVIntegrateR_output")
+if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
 
   # Read expression data from file
   expression_data <- as.data.frame(expr_df)
