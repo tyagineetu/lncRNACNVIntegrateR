@@ -54,15 +54,15 @@ preprocessing_and_preparation <- function(expr_df, cnv_df, clin_df) {
   ## Fetch GTF Annotations
   fetch_gtf_annotations <- function(gtf_url, timeout_duration = 300) {
     destination_path <- file.path(getwd(), "gencode.v22.annotation.gtf.gz")
-    download.file(gtf_url, destfile = destination_path, method = "curl", timeout = timeout_duration)
+    download.file(gtf_url, destfile = destination_path, method = "wget", timeout = timeout_duration)
     if (grepl(".gz$", destination_path)) {
-        system(paste("gunzip", destination_path))
-        destination_path <- sub(".gz$", "", destination_path)
+      system(paste("gunzip", destination_path))
+      destination_path <- sub(".gz$", "", destination_path)
     }
     if (!file.exists(destination_path)) stop("GTF file download failed.")
     gtf <- read.table(destination_path, header = FALSE, sep = "\t")
     return(gtf)
-}
+  }
   
   ## Process GTF Annotations
   process_gtf_annotations <- function(gtf) {
@@ -132,4 +132,3 @@ preprocessing_and_preparation <- function(expr_df, cnv_df, clin_df) {
               clin_selected = clinical_data[common_samples, ],
               PCG_matrix = matched_data$PCG_expr_data))
 }
-
