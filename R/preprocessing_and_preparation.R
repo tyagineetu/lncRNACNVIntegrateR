@@ -95,20 +95,20 @@ preprocessing_and_preparation <- function(expr_df, cnv_df, clin_df) {
   fetch_matched_data <- function(vst_data, cnv_data, lncRNA_names, PCG_names) {
     vst_data <- as.data.frame(vst_data)
     lncRNA_expr_data <- vst_data %>%
-      dplyr::select(all_of(intersect(lncRNA_names, colnames(vst_data))))
+      select(all_of(intersect(lncRNA_names, colnames(vst_data))))
     
     PCG_expr_data <- vst_data %>%
-      dplyr::select(all_of(intersect(PCG_names, colnames(vst_data))))
+      select(all_of(intersect(PCG_names, colnames(vst_data))))
     
     lncRNA_cnv_data <- cnv_data %>%
-      dplyr::select(all_of(intersect(lncRNA_names, colnames(cnv_data))))
+      select(all_of(intersect(lncRNA_names, colnames(cnv_data))))
     
     common_genes <- intersect(colnames(lncRNA_expr_data), colnames(lncRNA_cnv_data))
     lncRNA_expr_data_final <- lncRNA_expr_data %>%
-      dplyr::select(all_of(common_genes))
+      select(all_of(common_genes))
     
     lncRNA_cnv_data_final <- lncRNA_cnv_data %>%
-      dplyr::select(all_of(common_genes))
+      select(all_of(common_genes))
     
     return(list(lncRNA_expr_data = lncRNA_expr_data_final, lncRNA_cnv_data = lncRNA_cnv_data_final, PCG_expr_data = PCG_expr_data))
   }
