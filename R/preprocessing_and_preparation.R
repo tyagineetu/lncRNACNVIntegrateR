@@ -95,8 +95,6 @@ preprocessing_and_preparation <- function(expr_df, cnv_df, clin_df) {
   fetch_matched_data <- function(vst_data, cnv_data, lncRNA_names, PCG_names) {
     vst_data <- as.data.frame(vst_data)
     cnv_data <- as.data.frame(cnv_data)
-    lncRNA_names <- as.data.frame(lncRNA_names)
-    PCG_names <- as.data.frame(PCG_names)
     lncRNA_expr_data <- vst_data %>%
       select(all_of(intersect(lncRNA_names, colnames(vst_data))))
     
