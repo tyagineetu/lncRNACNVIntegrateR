@@ -147,8 +147,8 @@ Correlation_lncRNAs_and_CNVs <- function(preprocessing_and_preparation_result = 
 
   ### directly access the lncRNA positions already stored from the input_lncRNA function ###
   lncRNA_positions <- input_lncRNA_positions()
-  rownames(lncRNA_positions) <- lncRNA_positions[,1]
-  lncRNA_positions <- lncRNA_positions[, -1]
+ # rownames(lncRNA_positions) <- lncRNA_positions[,1]
+ # lncRNA_positions <- lncRNA_positions[, -1]
   lnc.locs.del <- merge(lncRNA_positions, new_matrix_del_info_1, by = "row.names")
   rownames(lnc.locs.del) <- lnc.locs.del[, 1]
   lnc.locs.del <- lnc.locs.del[, -1]
