@@ -17,11 +17,32 @@ in cancer, offering insights into prognostic signatures.
 ## Installation
 
 You can install the development version of lncRNACNVIntegrateR from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/) using the following methods:
 
+## 1. Using remotes or devtools
+``` r
+# Install the package from GitHub using remotes
+install.packages("remotes")
+remotes::install_github("tbgicgeb/lncRNACNVIntegrateR")
+
+# Or using devtools
+install.packages("devtools")
+devtools::install_github("tbgicgeb/lncRNACNVIntegrateR")
+```
+
+## 2. Using pak
 ``` r
 # install.packages("pak")
 pak::pak("tyagineetu/lncRNACNVIntegrateR")
+```
+## 3. Using Docker
+
+You can also run the package via its Docker container. Pull the Docker image using:
+
+```sh
+docker pull tbgicgeb/lncrnacnvintegrater_image
+Then, start the container:
+docker run -it tbgicgeb/lncrnacnvintegrater_image
 ```
 
 ## Example
