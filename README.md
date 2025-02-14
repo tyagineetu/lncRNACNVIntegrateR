@@ -41,7 +41,10 @@ You can also run the package via its Docker container. Pull the Docker image usi
 
 ```sh
 docker pull tbgicgeb/lncrnacnvintegrater_image
+```
 Then, start the container:
+
+```sh
 docker run -it tbgicgeb/lncrnacnvintegrater_image
 ```
 
